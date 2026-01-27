@@ -1,50 +1,70 @@
-# Vite & HeroUI Template
+# 📊 India Data Hub Assignment
 
-This is a template for creating applications using Vite and HeroUI (v2).
+A premium, high-performance web application developed as part of the technical assessment for **India Data Hub**. This project leverages modern web technologies to deliver a seamless and interactive user experience.
 
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/vite-template)
+---
 
-## Technologies Used
+## 📝 Project Description
 
-- [Vite](https://vitejs.dev/guide/)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
+This is an assignment from **India Data Hub**. The project is built using a modern stack focused on speed, scalability, and aesthetic excellence. It features a responsive design, interactive components, and optimized build processes.
 
-## How to Use
+### Key Features
+- **Modern UI/UX**: Built with HeroUI for a polished, professional look.
+- **Lightning Fast**: Powered by Vite for near-instant hot module replacement (HMR).
+- **Type Safe**: Fully implemented in TypeScript for robust development.
+- **Responsive**: Fluid layouts that work perfectly on mobile, tablet, and desktop.
 
-To clone the project, run the following command:
+---
 
+## 🚀 Steps to Run the Project
+
+Ensure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed on your machine.
+
+### 1. Install Dependencies
 ```bash
-git clone https://github.com/heroui-inc/vite-template.git
+pnpm install
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
-
+### 2. Run Development Server
 ```bash
-npm install
+pnpm dev
+```
+The application will be running at `http://localhost:5173`.
+
+### 3. Production Build
+```bash
+pnpm build
 ```
 
-### Run the development server
+---
 
+## 📥 Steps to Clone the Project
+
+To set up the project locally on your machine, follow these instructions:
+
+### 1. Clone the Repository
 ```bash
-npm run dev
+git clone https://github.com/dhirajdalvi2001/India-Data-Hub-Assignment.git
 ```
 
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
+### 2. Enter Project Directory
 ```bash
-public-hoist-pattern[]=*@heroui/*
+cd India-Data-Hub-Assignment
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+---
 
-## License
+## 🛠️ Tech Stack
 
-Licensed under the [MIT license](https://github.com/heroui-inc/vite-template/blob/main/LICENSE).
+| Technology | Purpose |
+| :--- | :--- |
+| **React 18** | Frontend Library |
+| **Vite** | Build Tool & Dev Server |
+| **HeroUI** | UI Component Library |
+| **Tailwind CSS** | Utility-first Styling |
+| **TypeScript** | Static Type Checking |
+| **Framer Motion** | Professional Animations |
+
+---
+
+Developed with ❤️ by **Dhiraj Dalvi**
