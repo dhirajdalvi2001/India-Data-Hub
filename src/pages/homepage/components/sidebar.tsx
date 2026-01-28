@@ -5,8 +5,8 @@ import { response2 } from '@/data/response2';
 import { useState } from 'react';
 
 export default function Sidebar() {
-// States
-const [activeItem, setActiveItem] = useState<string | null>(null)
+  // States
+  const [activeItem, setActiveItem] = useState<string | null>(null);
 
   // Category Dropdown Options
   const categoriesData = response2.categories;
@@ -19,37 +19,35 @@ const [activeItem, setActiveItem] = useState<string | null>(null)
 
   // Sidebar Nav items from response1
   const navitemsData = response1.categories;
-  const navitemOptions = navitemsData
-    ? Object.keys(navitemsData).map((cat) => ({
-        value: cat,
-        label: cat,
-      }))
-    : [];
+
+  const handleItemClick = (label: string) => {
+    setActiveItem(label);
+  };
 
   return (
-    <div className="w-[300px] flex flex-col gap-6 p-4 border-r border-gray-200">
+    <div className="w-[300px] flex-shrink-0 flex flex-col gap-6 p-4 border-r border-gray-200 h-full bg-white">
       {/* Category Dropdown Area */}
       <div className="flex flex-col gap-2">
         <CategoryDropdown options={options} />
       </div>
 
       {/* Navigation Menu */}
-      <div className="flex flex-col bg-[#F8FAFC] rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0,05)] overflow-hidden border border-gray-100">
+      <div className="flex flex-col bg-[#F8FAFC] rounded-2xl shadow-sm overflow-hidden border border-gray-100 flex-grow">
         {/* Homepage Header */}
-        <div className="px-6 py-4 mt-2 mx-2 bg-white rounded-xl">
+        <div className="px-6 py-4 mt-2 mx-2 bg-white rounded-xl shadow-sm">
           <h2 className="font-bold text-[#1E293B]">Homepage</h2>
         </div>
 
         {/* Scrollable Nav List */}
-        <div className="flex flex-col py-4 overflow-y-auto max-h-[calc(100vh-280px)]">
-          {navitemOptions.map((item) => (
+        <div className="flex flex-col py-4 overflow-y-auto max-h-[calc(100vh-178px)] scrollbar-hide">
+          {Object.entries(navitemsData).map(([label, children]) => (
             <SideNavitem
-              key={item.value}
-              label={item.label}
-              isActive={item.value === activeItem} // Example active state
-              hasGridIcon={['External Sector', 'Foreign Trade'].includes(
-                item.label,
-              )}
+              key={label}
+              label={label}
+              activeItem={activeItem}
+              childrenItems={children}
+              onClick={handleItemClick}
+              hasGridIcon={['External Sector', 'Foreign Trade'].includes(label)}
             />
           ))}
         </div>
