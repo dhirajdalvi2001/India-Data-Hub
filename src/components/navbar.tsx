@@ -22,8 +22,8 @@ export const Navbar = () => {
   return (
     <HeroUINavbar
       className="mx-auto h-[64px] fixed top-0 bg-white text-primary shadow-md"
-      maxWidth="xl"
       position="sticky"
+      maxWidth="2xl"
     >
       <img alt="Logo" className="h-10 w-auto" src={logo} />
       {!isLoginPage && (

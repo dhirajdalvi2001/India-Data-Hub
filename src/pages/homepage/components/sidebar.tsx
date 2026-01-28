@@ -25,11 +25,9 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="w-[300px] flex-shrink-0 flex flex-col gap-6 p-4 border-r border-gray-200 h-full bg-white">
+    <div className="w-[180px] sm:w-[300px] flex-shrink-0 flex flex-col gap-3 p-4 border-r border-gray-200 h-full bg-white text-[9px] sm:text-sm">
       {/* Category Dropdown Area */}
-      <div className="flex flex-col gap-2">
-        <CategoryDropdown options={options} />
-      </div>
+      <CategoryDropdown options={options} />
 
       {/* Navigation Menu */}
       <div className="flex flex-col bg-[#F8FAFC] rounded-2xl shadow-sm overflow-hidden border border-gray-100 flex-grow">
@@ -39,7 +37,7 @@ export default function Sidebar() {
         </div>
 
         {/* Scrollable Nav List */}
-        <div className="flex flex-col py-4 overflow-y-auto max-h-[calc(100vh-178px)] scrollbar-hide">
+        <div className="flex flex-col py-1 sm:py-4 overflow-y-auto max-h-[calc(100vh-248px)] scrollbar-hide">
           {Object.entries(navitemsData).map(([label, children]) => (
             <SideNavitem
               key={label}

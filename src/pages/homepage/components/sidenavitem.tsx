@@ -40,18 +40,18 @@ export default function SideNavitem({
         onKeyDown={(e) =>
           (e.key === 'Enter' || e.key === ' ') && handleToggle(e as any)
         }
-        className={`group flex items-center justify-between px-4 py-2.5 cursor-pointer transition-all duration-200 ${
+        className={`group flex items-center justify-between px-1. sm:px-4 py-1 sm:py-2.5 cursor-pointer transition-all duration-200 ${
           isActive
             ? 'bg-[#F0F7FF] text-[#0066FF]'
             : 'text-gray-600 hover:bg-gray-50'
         }`}
-        style={{ paddingLeft: `${level * 16 + 16}px` }}
+        style={{ paddingLeft: `${level * 16 + 4}px` }}
       >
         <div className="flex items-center gap-2 overflow-hidden">
           {hasChildren ? (
             <ChevronRight
               size={14}
-              className={`flex-shrink-0 transition-transform duration-200 ${
+              className={`flex-shrink-0 transition-transform duration-200 max-sm:w-4 ${
                 isOpen ? 'rotate-90' : ''
               } ${isActive ? 'text-[#0066FF]' : 'text-gray-400 group-hover:text-gray-600'}`}
             />
@@ -59,7 +59,7 @@ export default function SideNavitem({
             <div className="w-[14px] flex-shrink-0" /> // Spacer for alignment
           )}
           <span
-            className={`text-sm font-medium truncate ${
+            className={`text-[9px] sm:text-sm font-medium truncate ${
               isActive ? 'text-[#0066FF]' : 'text-[#475569]'
             }`}
           >
