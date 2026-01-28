@@ -1,9 +1,9 @@
 import { Button } from "@heroui/button";
 import { Navbar as HeroUINavbar } from "@heroui/navbar";
-import { useAtom, useAtomValue } from "jotai";
+import { useAtom } from 'jotai';
+import { useLocation } from 'react-router-dom';
 import { authStateAtom } from "@/utils/global";
-import logo from "@/assets/logo.webp";
-import { useLocation } from "react-router-dom";
+import logo from '@/assets/logo.webp';
 
 export const Navbar = () => {
   const location = useLocation();
@@ -21,7 +21,7 @@ export const Navbar = () => {
 
   return (
     <HeroUINavbar
-      className="mx-auto h-[64px] bg-white text-primary shadow-md"
+      className="mx-auto h-[64px] fixed top-0 bg-white text-primary shadow-md"
       maxWidth="xl"
       position="sticky"
     >
@@ -34,7 +34,7 @@ export const Navbar = () => {
           variant="solid"
           onClick={handleLoginLogout}
         >
-          {authState ? "Logout" : "Login"}
+          {authState ? 'Logout' : 'Login'}
         </Button>
       )}
     </HeroUINavbar>

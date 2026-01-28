@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "./provider";
 
 import { AuthGuard } from "./components/auth-guard";
-import IndexPage from "@/pages/index";
+import IndexPage from "@/pages/homepage/index";
 import LoginPage from "@/pages/login";
 
 const router = createBrowserRouter([

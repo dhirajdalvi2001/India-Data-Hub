@@ -1,24 +1,26 @@
-import { Link } from "@heroui/link";
-
-import { Navbar } from "@/components/navbar";
-import { cn } from "@heroui/theme";
+import { cn } from '@heroui/theme';
+import { Navbar } from '@/components/navbar';
 
 export default function DefaultLayout({
   children,
   className,
+  childrenClassName,
 }: {
   children: React.ReactNode;
   className?: string;
+  childrenClassName?: string;
 }) {
   return (
     <div
-      className={cn(
-        "relative flex flex-col min-h-screen min-w-screen",
-        className,
-      )}
+      className={cn('relative flex flex-col min-h-full min-w-full', className)}
     >
       <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">
+      <main
+        className={cn(
+          'w-full mx-auto px-3 sm:px-6 flex-grow min-h-screen pt-[86px]',
+          childrenClassName,
+        )}
+      >
         {children}
       </main>
     </div>
