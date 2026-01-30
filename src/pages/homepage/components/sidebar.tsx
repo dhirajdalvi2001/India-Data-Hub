@@ -4,7 +4,11 @@ import { response1 } from '@/data/response1';
 import { response2 } from '@/data/response2';
 import { useState } from 'react';
 
-export default function Sidebar() {
+interface SidebarProps {
+  onCategoryChange?: (category: string) => void;
+}
+
+export default function Sidebar({ onCategoryChange }: SidebarProps) {
   // States
   const [activeItem, setActiveItem] = useState<string | null>(null);
 
@@ -17,6 +21,8 @@ export default function Sidebar() {
       }))
     : [];
 
+  const optionsWIthIMFOption = [...options, { value: 'IMF', label: 'IMF' }];
+
   // Sidebar Nav items from response1
   const navitemsData = response1.categories;
 
@@ -27,7 +33,10 @@ export default function Sidebar() {
   return (
     <div className="w-[180px] sm:w-[300px] flex-shrink-0 flex flex-col gap-3 p-4 border-r border-gray-200 h-full bg-white text-[9px] sm:text-sm">
       {/* Category Dropdown Area */}
-      <CategoryDropdown options={options} />
+      <CategoryDropdown
+        options={optionsWIthIMFOption}
+        onSelectionChange={onCategoryChange}
+      />
 
       {/* Navigation Menu */}
       <div className="flex flex-col bg-[#F8FAFC] rounded-2xl shadow-sm overflow-hidden border border-gray-100 flex-grow">
