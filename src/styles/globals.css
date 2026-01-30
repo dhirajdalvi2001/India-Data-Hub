@@ -11,10 +11,10 @@
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
+    height: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
-    height: 4px;
   }
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: #e2e8f0;

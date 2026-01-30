@@ -51,7 +51,7 @@ export default function DataTable({ data }: DataTableProps) {
 
           return (
             <div className="min-w-96 flex flex-col gap-1.5 py-2">
-              <span className="text-[15px] font-bold text-[#1E293B] leading-tight">
+              <span className="text-xs sm:text-[15px] font-bold text-[#1E293B] leading-tight">
                 {item.title}
               </span>
               <div className="flex gap-2">
@@ -129,7 +129,10 @@ export default function DataTable({ data }: DataTableProps) {
         id: 'actions',
         cell: () => (
           <div className="flex items-center gap-4 text-gray-400">
-            <Bookmark className="cursor-pointer hover:text-gray-600" size={18} />
+            <Bookmark
+              className="cursor-pointer hover:text-gray-600"
+              size={18}
+            />
             <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-[#0066FF] text-white cursor-pointer hover:bg-blue-700 transition-colors">
               <Plus size={16} />
             </div>
@@ -160,7 +163,7 @@ export default function DataTable({ data }: DataTableProps) {
   });
 
   return (
-    <div className="fixed top-24 right-3 w-[calc(100vw-350px)] h-[calc(100vh-96px)] flex flex-col">
+    <div className="fixed top-24 right-3 w-[calc(100vw-220px)] sm:w-[calc(100vw-350px)] h-[calc(100vh-96px)] flex flex-col">
       <div className="w-full bg-white rounded-2xl border border-gray-100 shadow-sm overflow-x-auto overflow-y-auto flex-grow custom-scrollbar">
         <table className="w-full border-separate border-spacing-0">
           <thead className="sticky top-0 z-10">
@@ -169,7 +172,7 @@ export default function DataTable({ data }: DataTableProps) {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="px-6 py-4 text-left text-sm font-bold text-[#49046b] bg-gray-50/95 backdrop-blur-sm border-b border-gray-100"
+                    className="px-6 py-4 text-left text-xs sm:text-sm font-bold text-[#49046b] bg-gray-50/95 backdrop-blur-sm border-b border-gray-100"
                   >
                     {flexRender(
                       header.column.columnDef.header,
@@ -199,7 +202,7 @@ export default function DataTable({ data }: DataTableProps) {
 
       {/* Pagination Controls */}
       <div className="flex items-center justify-between px-2 py-2">
-        <div className="text-sm text-gray-500">
+        <div className="text-xs sm:text-sm text-gray-500">
           Showing{' '}
           <span className="font-medium">
             {pagination.pageIndex * pagination.pageSize + 1}

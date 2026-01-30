@@ -1,22 +1,17 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Provider } from "./provider";
-
-import { AuthGuard } from "./components/auth-guard";
-import IndexPage from "@/pages/homepage/index";
-import LoginPage from "@/pages/login";
+import { AuthGuard } from './components/auth-guard';
+import { RootLayout } from './layouts/root';
+import IndexPage from '@/pages/homepage/index';
+import LoginPage from '@/pages/login';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <Provider>
-        <Outlet />
-      </Provider>
-    ),
+    path: '/',
+    element: <RootLayout />,
     children: [
       {
-        path: "login",
+        path: 'login',
         element: <LoginPage />,
       },
       {
