@@ -5,10 +5,6 @@ import { authStateAtom } from "@/utils/global";
 export function AuthGuard() {
   const authState = useAtomValue(authStateAtom);
 
-  if (authState === null) {
-    return null;
-  }
-
   if (!authState) {
     return <Navigate to="/login" replace />;
   }
